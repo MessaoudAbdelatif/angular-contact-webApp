@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-6 mx-auto my-5">
+    <section class="form-elegant">
+      <mdb-card>
+        <mdb-card-body class="mx-4">
+          <!--Header-->
+          <div class="text-center">
+            <h3 class="dark-grey-text mb-5">
+              <strong>Register</strong>
+            </h3>
+          </div>
+
+          <form [formGroup]="signupForm" (ngSubmit)="signup()">
+            <div class="md-form">
+              <input type="text" [formControlName]="'username'" id="elegantFormUsername" class="form-control"
+                     formControlName="elegantFormUsername" mdbInput>
+              <label for="elegantFormUsername">Your username</label>
+              <span class="text-danger" *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">Please provide a valid username !</span>
+            </div>
+
+            <div class="md-form">
+              <input type="text" [formControlName]="'email'" id="elegantFormEmailEx" class="form-control"
+                     formControlName="elegantFormEmailEx" mdbInput>
+              <label for="elegantFormEmailEx">Your email</label>
+              <span class="text-danger" *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">Please provide a valid email !</span>
+            </div>
+
+            <div class="md-form pb-3">
+              <input type="password" [formControlName]="'password'" id="elegantFormPasswordEx"
+                     formControlName="elegantFormPasswordEx" class="form-control" mdbInput>
+              <label for="elegantFormPasswordEx">Your password</label>
+              <p class="font-small blue-text d-flex justify-content-end">Forgot
+                <a href="#" class="blue-text ml-1"> Password?</a>
+              </p>
+              <span class="text-danger" *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">Please provide a valid password at least 5 characters!</span>
+            </div>
+            <div class="text-center mb-3">
+              <button type="submit" mdbBtn gradient="blue" block="true" rounded="true" class="z-depth-1a waves-light"
+                      mdbWavesEffect>Sign up
+              </button>
+            </div>
+          </form>
+          <!--Body-->
+
+
+          <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign up with:</p>
+
+          <div class="row my-3 d-flex justify-content-center">
+            <!--Facebook-->
+            <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light"
+                    mdbWavesEffect>
+              <mdb-icon fab icon="facebook" class="blue-text text-center"></mdb-icon>
+            </button>
+            <!--Twitter-->
+            <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light"
+                    mdbWavesEffect>
+              <mdb-icon fab icon="twitter" class="blue-text"></mdb-icon>
+            </button>
+            <!--Google +-->
+            <button type="button" mdbBtn color="white" rounded="true" class="z-depth-1a waves-light" mdbWavesEffect>
+              <mdb-icon fab icon="google-plus" class="blue-text"></mdb-icon>
+            </button>
+          </div>
+        </mdb-card-body>
+        <div class="modal-footer mx-5 pt-3 mb-1">
+          <p class="font-small grey-text d-flex justify-content-end">Existing user ?
+            <a href="#" class="blue-text ml-1"> Log In</a>
+          </p>
+        </div>
+      </mdb-card>
+
+    </section>
+  </div>
+</div>
