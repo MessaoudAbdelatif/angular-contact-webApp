@@ -12,3 +12,21 @@
   -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
   box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
 }
+
+.login-failed, .register-success {
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 75%;
+  background-color: #419bd8;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+  box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+}
+
+.login-failed-text, .register-success-text {
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+  color: aliceblue;
+}

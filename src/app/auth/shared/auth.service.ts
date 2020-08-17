@@ -19,14 +19,14 @@ export class AuthService {
     return this.httpClient.post('http://localhost:8080/api/auth/signup', signupRequestPayload, {responseType: 'text'})
   }
 
-  // @ts-ignore
+
   login(loginRequest: LoginRequest): Observable<boolean> {
-    this.httpClient.post<LoginResponse>('http://localhost:8080/api/auth/login', loginRequest)
+    return this.httpClient.post<LoginResponse>('http://localhost:8080/api/auth/login', loginRequest)
       .pipe(map(data => {
-      this.localStorage.store('authenticationToken', data.authenticationToken);
-      this.localStorage.store('username', data.username);
-      this.localStorage.store('expiresAt', data.expiresAt);
-      return true;
+        this.localStorage.store('authenticationToken', data.authenticationToken);
+        this.localStorage.store('username', data.username);
+        this.localStorage.store('expiresAt', data.expiresAt);
+        return true;
       }));
   }
 }

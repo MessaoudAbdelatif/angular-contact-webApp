@@ -12,13 +12,13 @@
 
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="md-form">
-              <input type="text" id="elegantFormUsername" [formControlName]="'username'" class="form-control" formControlName="elegantFormUsername" mdbInput>
+              <input type="text" id="elegantFormUsername" [formControlName]="'username'" class="form-control"  mdbInput>
               <label for="elegantFormUsername">Username</label>
               <span *ngIf="!loginForm.get('username').value && loginForm.get('username').touched" class="text-danger"> Please provide a valid username</span>
             </div>
 
             <div class="md-form pb-3">
-              <input type="password" id="elegantFormPasswordEx" formControlName="elegantFormPasswordEx" class="form-control" mdbInput>
+              <input type="password" id="elegantFormPasswordEx" [formControlName]="'password'"  class="form-control" mdbInput>
               <label for="elegantFormPasswordEx">Password</label>
               <span *ngIf="!loginForm.get('password').value && loginForm.get('password').touched" class="text-danger">Password cannot be empty</span>
               <p class="font-small blue-text d-flex justify-content-end">Forgot
@@ -54,6 +54,14 @@
             <a routerLink="/sign-up" class="blue-text ml-1"> Sign Up</a>
           </p>
         </div>
+
+          <div class="login-failed" *ngIf='this.isError'>
+            <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>
+          </div>
+          <div class="login-failed" *ngIf="this.registerSuccessMessage && this.registerSuccessMessage.length > 0">
+            <p class="register-success-text">{{registerSuccessMessage}}</p>
+          </div>
+
       </mdb-card>
 
     </section>
