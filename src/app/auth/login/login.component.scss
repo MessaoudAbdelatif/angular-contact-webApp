@@ -30,3 +30,6 @@
   font-weight: bold;
   color: aliceblue;
 }
+input.ng-touched.ng-invalid{
+  border-bottom-color: red;
+}
